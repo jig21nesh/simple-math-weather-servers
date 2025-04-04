@@ -6,17 +6,17 @@ This project demonstrates building a ReAct-style agent using
 [MCP](https://github.com/langchain-ai/mcp), paired with a locally running 
 [Ollama](https://ollama.com) LLM.
 
-The agent invokes tools like `add` and `multiply` via a subprocess MCP server (`math_server.py`) using `stdio` transport.
+The agent invokes tools like `add` and `multiply` via a subprocess MCP server (`math_server.py`) using `stdio` transport, and integrates an optional SSE-based weather server.
 
 ---
 
 ## ✅ Features
 
-- **MultiServerMCPClient Integration:** Launch and communicate with a math server using the MCP protocol.
-- **ReAct Agent:** Use a ReAct agent to decide when to call tools based on user queries.
-- **Tool Invocation:** Demonstrates tool calls (e.g., `add` and `multiply`) via a math server.
-- **Verbose Logging & Callbacks:** Uses LangChain's callback manager to stream intermediate outputs and chain-of-thought.
-
+- **MultiServerMCPClient Integration:** Launch and communicate with multiple MCP-based tool servers.
+- **ReAct Agent:** Uses LangGraph's ReAct-style agent to plan and act.
+- **Math Tools (via STDIO):** Addition and multiplication tools handled by `math_server.py`.
+- **Weather Tools (via SSE):** Real-time weather tools provided by `weather_server.py` via SSE transport.
+- **Verbose Logging & Callbacks:** Uses LangChain’s callback manager for step-by-step agent visibility.
 
 ---
 
@@ -97,4 +97,4 @@ Here are key resources and documentation links that helped during development an
   https://github.com/tam159/generative_ai/blob/981decfa995ac50350f9f3b058639fd440013d1b/llm/notebook/mcp/mcp_adapters_client.ipynb
   https://github.com/dimz119/learn-langchain/blob/a8466a6945ba583009f55b3dcb2d9b4e5d936e2c/mcp/math_server.py
   https://medium.com/the-ai-forum/understanding-model-context-protocol-a-deep-dive-into-multi-server-langchain-integration-3d038247e0bd
-  
+
