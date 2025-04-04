@@ -1,0 +1,9 @@
+mcp 
+httpx 
+langchain 
+langchain-core 
+langchain-community 
+langchain-ollama 
+langchain_mcp_adapters
+ipython
+langgraph
